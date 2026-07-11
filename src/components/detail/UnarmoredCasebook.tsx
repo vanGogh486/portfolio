@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 
 type Phase = 'closed' | 'opening' | 'page-1' | 'flipping' | 'page-2' | 'page-3' | 'page-4' | 'closing'
 
@@ -205,9 +206,9 @@ function PageRight({ page, goToPage }: { page: number; goToPage: (p: number) => 
   if (page === 1) return (
     <div className="flex-1 flex items-center justify-center p-6 bg-[#111] rounded-b-xl lg:rounded-r-xl lg:rounded-bl-none overflow-hidden">
       <div className="grid grid-cols-2 gap-3 w-full max-w-md">
-        <img src="/projects/unarmored/process/storyboard-01.png" alt="分镜01" className="rounded-lg w-full object-cover border border-white/[0.04]" />
-        <img src="/projects/unarmored/process/storyboard-02.png" alt="分镜02" className="rounded-lg w-full object-cover border border-white/[0.04]" />
-        <img src="/projects/unarmored/process/storyboard-03.png" alt="分镜03" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/process/storyboard-01.png")} alt="分镜01" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/process/storyboard-02.png")} alt="分镜02" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/process/storyboard-03.png")} alt="分镜03" className="rounded-lg w-full object-cover border border-white/[0.04]" />
         <div className="rounded-lg border border-white/[0.04] flex items-center justify-center bg-[#0C0C0C]">
           <span className="text-[10px] tracking-[0.1em] text-white/15 uppercase">CHARACTER<br/>REFERENCE</span>
         </div>
@@ -217,10 +218,10 @@ function PageRight({ page, goToPage }: { page: number; goToPage: (p: number) => 
   if (page === 2) return (
     <div className="flex-1 flex items-center justify-center p-6 bg-[#111] rounded-b-xl lg:rounded-r-xl lg:rounded-bl-none overflow-hidden">
       <div className="grid grid-cols-2 gap-3 w-full max-w-md">
-        <img src="/projects/unarmored/gallery/5s.jpg" alt="00:05" className="rounded-lg w-full object-cover border border-white/[0.04]" />
-        <img src="/projects/unarmored/gallery/45s.jpg" alt="00:45" className="rounded-lg w-full object-cover border border-white/[0.04]" />
-        <img src="/projects/unarmored/gallery/105s.jpg" alt="01:45" className="rounded-lg w-full object-cover border border-white/[0.04]" />
-        <img src="/projects/unarmored/gallery/145s.jpg" alt="02:25" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/gallery/5s.jpg")} alt="00:05" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/gallery/45s.jpg")} alt="00:45" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/gallery/105s.jpg")} alt="01:45" className="rounded-lg w-full object-cover border border-white/[0.04]" />
+        <img src={publicAsset("/projects/unarmored/gallery/145s.jpg")} alt="02:25" className="rounded-lg w-full object-cover border border-white/[0.04]" />
       </div>
     </div>
   )
@@ -252,7 +253,7 @@ function PageRight({ page, goToPage }: { page: number; goToPage: (p: number) => 
     <div className="flex-1 flex flex-col items-center justify-center p-6 bg-[#111] rounded-b-xl lg:rounded-r-xl lg:rounded-bl-none">
       <div className="max-w-md w-full space-y-4 text-center">
         <p className="text-[14px] font-medium text-[#C8C0B8]">播放完整作品</p>
-        <video src="/projects/unarmored/full.mp4" poster="/media/portfolio-v2/projects/unarmored/poster.png"
+        <video src={publicAsset("/projects/unarmored/full.mp4")} poster={publicAsset("/media/portfolio-v2/projects/unarmored/poster.png")}
           className="w-full rounded-lg" controls playsInline preload="metadata" />
         <div className="flex gap-4 justify-center pt-2">
           <button onClick={() => goToPage(1)}

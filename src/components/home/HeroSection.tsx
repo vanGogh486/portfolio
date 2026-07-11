@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement | null>(null)

@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 import { PROFILE, EDUCATION } from '@/data/profile'
+import { publicAsset } from '@/lib/publicAsset'
 
 const stats = [
   { value: '18万+', label: '全平台曝光', key: 'exposure' },
@@ -88,7 +89,7 @@ export default function AboutSectionV3() {
       {/* L0: Studio bg */}
       <motion.div className="absolute inset-0 z-0 pointer-events-none" style={{ y: bgY }} aria-hidden="true">
         {showVideo && !bgError ? (
-          <video ref={bgRef} src="/media/portfolio-v2/hero/hero-background.mp4"
+          <video ref={bgRef} src={publicAsset("/media/portfolio-v2/hero/hero-background.mp4")}
             className="w-full h-full object-cover opacity-[0.12] blur-[2px]" muted loop playsInline preload="metadata" />
         ) : <div className="absolute inset-0 bg-[#0C0C0C]" />}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0C0C0C]/60 via-transparent to-[#0C0C0C]/80" />
@@ -116,7 +117,7 @@ export default function AboutSectionV3() {
               {/* Warm reading glow */}
               <div className="absolute -inset-8 rounded-full pointer-events-none" style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(200,192,184,0.03) 0%, transparent 60%)' }} />
               <motion.div className="relative" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-                <img src="/media/portfolio-v2/about/portrait.png" alt="潘奕冰"
+                <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="潘奕冰"
                   className="w-auto object-contain object-bottom select-none"
                   style={{
                     height: 'clamp(420px, 55vh, 580px)',
@@ -174,7 +175,7 @@ export default function AboutSectionV3() {
               {/* Glass ring behind lens — smaller, lower opacity */}
               {showVideo && (
                 <div className="absolute -inset-[10%] pointer-events-none z-[2] opacity-[0.06]" aria-hidden="true">
-                  <video ref={glassRef} src="/media/portfolio-v2/decorations/glass-loop.mp4"
+                  <video ref={glassRef} src={publicAsset("/media/portfolio-v2/decorations/glass-loop.mp4")}
                     className="w-full h-full object-contain" muted loop playsInline preload="metadata" />
                 </div>
               )}
@@ -198,7 +199,7 @@ export default function AboutSectionV3() {
                 {/* Lens video — scaled up 1.35x, centered, NO controls, pointer-events-none */}
                 {showVideo && (
                   <div className="absolute inset-0 overflow-hidden rounded-full pointer-events-none">
-                    <video ref={lensRef} src="/media/portfolio-v2/decorations/lens-loading.mp4"
+                    <video ref={lensRef} src={publicAsset("/media/portfolio-v2/decorations/lens-loading.mp4")}
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                       style={{ width: '135%', height: '135%', objectFit: 'cover', opacity: lensHovered ? 1 : 0.65, transition: 'opacity 500ms' }}
                       muted loop playsInline preload="metadata"
@@ -257,7 +258,7 @@ export default function AboutSectionV3() {
             <div className="flex-1 rounded-sm" style={{ height: 40, backgroundColor: 'rgba(200,192,184,0.025)', borderTop: '1px solid rgba(200,192,184,0.04)', borderBottom: '1px solid rgba(200,192,184,0.04)' }}>
               {/* Subtle video texture overlay if available */}
               {showVideo && (
-                <video ref={filmRef} src="/media/portfolio-v2/decorations/film-loop.mp4"
+                <video ref={filmRef} src={publicAsset("/media/portfolio-v2/decorations/film-loop.mp4")}
                   className="w-full h-full object-cover opacity-[0.08]" muted loop playsInline preload="metadata" />
               )}
             </div>
@@ -283,7 +284,7 @@ export default function AboutSectionV3() {
         {/* MOBILE */}
         <div className="lg:hidden space-y-12">
           <motion.div className="flex justify-center" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-            <img src="/media/portfolio-v2/about/portrait.png" alt="潘奕冰"
+            <img src={publicAsset("/media/portfolio-v2/about/portrait.png")} alt="潘奕冰"
               className="w-auto object-contain object-bottom"
               style={{
                 height: 'clamp(300px, 55vh, 450px)',
@@ -304,7 +305,7 @@ export default function AboutSectionV3() {
             <div className="relative overflow-hidden rounded-full" style={{ width: 260, height: 260, borderColor: 'rgba(200,192,184,0.06)', borderWidth: 1 }}>
               {showVideo && (
                 <div className="absolute inset-0 overflow-hidden rounded-full pointer-events-none">
-                  <video ref={lensRef} src="/media/portfolio-v2/decorations/lens-loading.mp4"
+                  <video ref={lensRef} src={publicAsset("/media/portfolio-v2/decorations/lens-loading.mp4")}
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-65"
                     style={{ width: '135%', height: '135%', objectFit: 'cover' }}
                     muted loop playsInline preload="metadata" disablePictureInPicture tabIndex={-1} aria-hidden="true" />

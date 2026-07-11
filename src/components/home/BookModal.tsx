@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 
 interface Props { open: boolean; onClose: () => void }
 
@@ -110,8 +111,8 @@ export default function BookModal({ open, onClose }: Props) {
               <div className="flex-1 bg-black flex flex-col min-h-0">
                 <div className="flex-1 relative min-h-[280px]">
                   <video ref={fullVideoRef}
-                    src="/projects/unarmored/preview.mp4"
-                    poster="/media/portfolio-v2/projects/unarmored/poster.png"
+                    src={publicAsset("/projects/unarmored/preview.mp4")}
+                    poster={publicAsset("/media/portfolio-v2/projects/unarmored/poster.png")}
                     className="absolute inset-0 w-full h-full object-contain bg-black cursor-pointer"
                     muted={isMuted} loop playsInline preload="metadata"
                     onTimeUpdate={() => { if (fullVideoRef.current) setCurrentTime(fullVideoRef.current.currentTime) }}

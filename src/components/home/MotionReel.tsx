@@ -115,7 +115,7 @@ function ReelCard({ project, index, compact }: { project: typeof projects[0]; in
     >
       {/* Cover poster (visible until hover) */}
       <img
-        src={project.cover}
+        src={publicAsset(project.cover)}
         alt={project.title}
         className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
         loading="lazy"
@@ -123,7 +123,7 @@ function ReelCard({ project, index, compact }: { project: typeof projects[0]; in
       {/* Preview video */}
       <video
         ref={videoRef}
-        src={project.preview}
+        src={publicAsset(project.preview)}
         className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         muted
         loop

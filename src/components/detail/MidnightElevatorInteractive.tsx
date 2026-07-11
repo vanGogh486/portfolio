@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 
 type Phase = 'closed' | 'intro' | 'choice' | 'loading-a' | 'loading-b' | 'branch-a' | 'branch-b' | 'ending'
 
@@ -162,7 +163,7 @@ export default function MidnightElevatorInteractive({ open, onClose }: { open: b
       <div className="relative" style={{ aspectRatio: '9 / 16', maxHeight: '86vh', height: 'min(86vh, 95vw * 16/9)' }}>
         {/* Choice frame backdrop during loading */}
         {(isLoading || phase === 'choice') && (
-          <img src="/projects/midnight-elevator/interactive/choice-frame.jpg" alt=""
+          <img src={publicAsset("/projects/midnight-elevator/interactive/choice-frame.jpg")} alt=""
             className="absolute inset-0 w-full h-full object-contain rounded-lg"
             style={{ opacity: isLoading ? 0.5 : 0.3 }} aria-hidden="true" />
         )}

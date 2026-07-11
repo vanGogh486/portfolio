@@ -7,6 +7,7 @@ import ErrorBoundary from '@/components/shared/ErrorBoundary'
 import NotFound from '@/components/shared/NotFound'
 import MidnightElevatorInteractive from '@/components/detail/MidnightElevatorInteractive'
 import CinematicBookPlayer from '@/components/detail/CinematicBookPlayer'
+import { publicAsset } from '@/lib/publicAsset'
 
 // Per-project detail content
 const projectDetails: Record<string, {
@@ -215,7 +216,7 @@ export default function WorkDetailPage() {
           <section className="mb-16">
             <h2 className="text-lg sm:text-xl font-bold mb-6 pb-4" style={{ color: '#C8C0B8', borderBottom: '1px solid rgba(200,192,184,0.06)' }}>{slug === 'midnight-elevator' ? '观看线性完整版' : '完整作品'}</h2>
             <div className="rounded-xl overflow-hidden bg-black border" style={{ borderColor: 'rgba(200,192,184,0.06)' }}>
-              <video src={work.fullVideo} poster={work.thumbnail} className="w-full" controls playsInline preload="metadata" />
+              <video src={publicAsset(work.fullVideo)} poster={publicAsset(work.thumbnail)} className="w-full" controls playsInline preload="metadata" />
             </div>
           </section>
         )}

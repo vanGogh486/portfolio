@@ -132,11 +132,11 @@ export default function CinematicProjectViewer({ projects, activeIndex, open, on
             {/* RIGHT/TOP: Big image or video */}
             <div className="flex-1 bg-black flex items-center justify-center relative min-h-[300px] lg:min-h-[500px] order-1 lg:order-2 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none overflow-hidden">
               {/* Poster — always shown when video not playing */}
-              <img src={active.cover} alt={active.title}
+              <img src={publicAsset(active.cover)} alt={active.title}
                 className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${playerState === 'playing' ? 'opacity-0' : 'opacity-100'}`} />
               {/* Video — shown when playing */}
               {hasVideo && !videoError && (
-                <video ref={videoRef} src={active.preview} poster={active.cover}
+                <video ref={videoRef} src={publicAsset(active.preview)} poster={publicAsset(active.cover)}
                   className={`absolute inset-0 w-full h-full object-contain bg-black cursor-pointer transition-opacity duration-500 ${playerState === 'playing' ? 'opacity-100' : 'opacity-0'}`}
                   muted={isMuted} loop playsInline preload="metadata"
                   onError={() => setVideoError(true)} onClick={togglePlay} />
@@ -173,7 +173,7 @@ export default function CinematicProjectViewer({ projects, activeIndex, open, on
             className="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2.5 text-white/70 hover:text-white transition-colors" aria-label="关闭">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
-          <video ref={fullVideoRef} src={active.fullVideo} poster={active.cover}
+          <video ref={fullVideoRef} src={publicAsset(active.fullVideo)} poster={publicAsset(active.cover)}
             className="max-w-full max-h-full object-contain" controls playsInline preload="metadata" />
         </div>
       )}

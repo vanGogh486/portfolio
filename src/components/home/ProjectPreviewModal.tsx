@@ -244,7 +244,7 @@ export default function ProjectPreviewModal({ project, onClose }: Props) {
                   }`}
                 >
                   <img
-                    src={project.cover}
+                    src={publicAsset(project.cover)}
                     alt={project.title}
                     className="absolute inset-0 h-full w-full object-cover"
                   />
@@ -264,14 +264,14 @@ export default function ProjectPreviewModal({ project, onClose }: Props) {
                 {/* Video element */}
                 {videoError ? (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <img src={project.cover} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-50" />
+                    <img src={publicAsset(project.cover)} alt={project.title} className="absolute inset-0 w-full h-full object-cover opacity-50" />
                     <p className="relative text-white/30 text-sm">无法加载视频</p>
                   </div>
                 ) : (
                   <video
                     ref={videoRef}
-                    src={project.preview}
-                    poster={project.cover}
+                    src={publicAsset(project.preview)}
+                    poster={publicAsset(project.cover)}
                     className="absolute inset-0 h-full w-full object-contain bg-black cursor-pointer"
                     muted={isMuted}
                     loop

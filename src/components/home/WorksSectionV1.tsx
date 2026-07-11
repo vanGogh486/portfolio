@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import CinematicProjectViewer from './CinematicProjectViewer'
+import { publicAsset } from '@/lib/publicAsset'
 
 interface ProjectEntry {
   slug: string; num: string; title: string; titleEn: string
@@ -100,16 +101,16 @@ export default function WorksSectionV1() {
                 onClick={()=>setViewerOpen(true)}>
                 {/* Portrait blur bg fill — only for vertical projects */}
                 {active.aspectRatio === 'portrait' && (
-                  <img src={active.cover} alt="" aria-hidden="true"
+                  <img src={publicAsset(active.cover)} alt="" aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     style={{ filter: 'blur(28px) brightness(0.35)', transform: 'scale(1.15)', opacity: 0.35 }} />
                 )}
                 {/* Poster */}
-                <img src={active.cover} alt={active.title} className={`absolute inset-0 w-full h-full transition-all duration-500 ${hoverPlaying?'opacity-0 scale-105':'opacity-100 scale-100'}`}
+                <img src={publicAsset(active.cover)} alt={active.title} className={`absolute inset-0 w-full h-full transition-all duration-500 ${hoverPlaying?'opacity-0 scale-105':'opacity-100 scale-100'}`}
                   style={{ objectFit: active.aspectRatio === 'portrait' ? 'contain' : 'cover', objectPosition:active.objectPosition, filter:active.cssFilter }} />
                 {/* Hover video — 卸甲 only */}
                 {active.hoverVideo && (
-                  <video ref={hoverVideoRef} src={active.hoverVideo}
+                  <video ref={hoverVideoRef} src={publicAsset(active.hoverVideo)}
                     className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 pointer-events-none ${hoverPlaying?'opacity-100 scale-100':'opacity-0 scale-105'}`}
                     muted loop playsInline preload="metadata" onError={()=>setHoverPlaying(false)} />
                 )}
@@ -147,7 +148,7 @@ export default function WorksSectionV1() {
           {/* MOBILE */}
           <div className="lg:hidden space-y-8">
             <motion.div className="relative overflow-hidden rounded-[4px] aspect-[16/10] cursor-pointer" style={{ backgroundColor:'rgba(200,192,184,0.02)' }} onClick={()=>setViewerOpen(true)}>
-              <motion.img key={active.slug} src={active.cover} alt={active.title} className="absolute inset-0 w-full h-full" style={{ objectFit:'cover', objectPosition:active.objectPosition, filter:active.cssFilter }} initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.35 }} />
+              <motion.img key={active.slug} src={publicAsset(active.cover)} alt={active.title} className="absolute inset-0 w-full h-full" style={{ objectFit:'cover', objectPosition:active.objectPosition, filter:active.cssFilter }} initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ duration:0.35 }} />
               <div className="absolute top-3 left-3"><p className="text-[10px] tracking-[0.1em]" style={{ color:'rgba(200,192,184,0.25)' }}>{active.num}</p></div>
             </motion.div>
             <div className="space-y-3"><p className="text-2xl font-bold" style={{ color:'#C8C0B8' }}>{active.title}</p><p className="text-[11px]" style={{ color:'rgba(200,192,184,0.35)' }}>{active.titleEn} · {active.year} · {active.category}</p><p className="text-[12px] leading-relaxed" style={{ color:'rgba(200,192,184,0.4)' }}>{active.role}</p></div>

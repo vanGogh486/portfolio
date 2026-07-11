@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 
 type Phase = 'cover' | 'opening' | 'screening' | 'auto-closing'
 
@@ -117,7 +118,7 @@ export default function CinematicBookPlayer({ open, onClose }: { open: boolean; 
             onClick={startOpening}
             style={{ backgroundColor: '#0C0C0C' }}>
             <motion.div className="text-center" whileHover={{ scale: 1.015 }} transition={{ duration: 0.4 }}>
-              <img src="/media/portfolio-v2/projects/unarmored/poster.png" alt="《卸甲》"
+              <img src={publicAsset("/media/portfolio-v2/projects/unarmored/poster.png")} alt="《卸甲》"
                 className="max-w-[85%] max-h-[65%] object-contain mx-auto rounded-lg mb-6 opacity-90"
                 style={{ filter: 'brightness(0.9)' }} />
               <h2 className="text-3xl sm:text-4xl font-bold text-[#C8C0B8] mb-1">《卸甲》</h2>

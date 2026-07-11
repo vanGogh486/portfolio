@@ -23,7 +23,7 @@ export default function ArchiveSection() {
                 className={`group relative overflow-hidden rounded-2xl border text-left transition-all duration-400 hover:-translate-y-1 cursor-pointer ${proj.aspectRatio === '9:16' ? 'sm:col-span-1' : ''}`}
                 style={{ borderColor: 'rgba(200,192,184,0.05)', backgroundColor: 'rgba(200,192,184,0.01)', aspectRatio: proj.aspectRatio === '9:16' ? '9/16' : '16/10' }}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}>
-                <img src={proj.cover} alt={proj.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                <img src={publicAsset(proj.cover)} alt={proj.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <span className="text-[10px] tracking-[0.1em] uppercase" style={{ color: 'rgba(200,192,184,0.25)' }}>{proj.category}</span>
@@ -52,7 +52,7 @@ export default function ArchiveSection() {
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <div className={`relative ${activeProject.aspectRatio === '9:16' ? 'h-[85vh]' : 'w-[85vw] max-w-5xl'}`} onClick={e => e.stopPropagation()}>
-              <video src={activeProject.fullVideo} poster={activeProject.cover}
+              <video src={publicAsset(activeProject.fullVideo)} poster={publicAsset(activeProject.cover)}
                 className="w-full h-full object-contain rounded-lg" controls playsInline preload="metadata" />
             </div>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">

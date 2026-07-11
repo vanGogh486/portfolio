@@ -7,6 +7,7 @@ import WorksSectionV1 from '@/components/home/WorksSectionV1'
 import ExperienceSectionSimple from '@/components/home/ExperienceSectionSimple'
 import ToolstackSection from '@/components/home/ToolstackSection'
 import { projects } from '@/data/projects'
+import { publicAsset } from '@/lib/publicAsset'
 
 export default function HomePage() {
   const sectionRef = useRef<HTMLDivElement>(null!)
@@ -65,7 +66,7 @@ export default function HomePage() {
       <section ref={sectionRef} className="relative min-h-screen flex items-end bg-[#0C0C0C]" onMouseMove={onMouseMove}>
         <div className="absolute inset-0 z-0" aria-hidden="true">
           {showVideo && !bgVideoError ? (
-            <video ref={bgVideoRef} src="/media/portfolio-v2/hero/hero-background.mp4" className="w-full h-full object-cover opacity-[0.22]" muted loop playsInline preload="metadata" />
+            <video ref={bgVideoRef} src={publicAsset("/media/portfolio-v2/hero/hero-background.mp4")} className="w-full h-full object-cover opacity-[0.22]" muted loop playsInline preload="metadata" />
           ) : (<div className="absolute inset-0 bg-[#0C0C0C]" />)}
         </div>
         <motion.div className="absolute inset-0 z-[1] pointer-events-none" style={{ backgroundColor: '#0C0C0C', opacity: bgDarken }} />
@@ -94,7 +95,7 @@ export default function HomePage() {
               <p className="font-black uppercase tracking-tight leading-[0.85] text-center lg:text-right" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)', color: 'rgba(200,192,184,0.06)' }}>PAN<br className="lg:hidden"/> YIBING</p>
             </div>
             <div className="relative z-10 flex items-end justify-center h-full w-full lg:w-auto" style={{ pointerEvents: 'auto' }}>
-              <img src="/portrait/hero-portrait.png" alt="" className="w-auto max-w-none object-contain object-bottom select-none" style={{ height: isMobile ? 'clamp(55vh, 65vh, 75vh)' : 'clamp(70vh, 88vh, 92vh)', maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)' }} draggable={false} />
+              <img src={publicAsset("/portrait/hero-portrait.png")} alt="" className="w-auto max-w-none object-contain object-bottom select-none" style={{ height: isMobile ? 'clamp(55vh, 65vh, 75vh)' : 'clamp(70vh, 88vh, 92vh)', maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)' }} draggable={false} />
               <div className="absolute bottom-0 left-0 right-0 h-[6%] pointer-events-none" style={{ background: 'linear-gradient(to top, #0C0C0C, transparent)' }} />
             </div>
             {parallaxOn && (
@@ -109,7 +110,7 @@ export default function HomePage() {
           <motion.div className="flex items-center gap-3 px-5 py-3.5 rounded-2xl cursor-pointer overflow-hidden" style={{ backgroundColor: 'rgba(18,18,18,0.85)', borderColor: 'rgba(200,192,184,0.1)', borderWidth: 1, borderStyle: 'solid', backdropFilter: 'blur(8px)' }}
             onMouseEnter={() => setFilmDrawerOpen(true)} onMouseLeave={() => setFilmDrawerOpen(false)}
             animate={{ width: filmDrawerOpen ? 'min(560px, 66vw)' : 280 }} transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}>
-            {showVideo && (<div className="absolute left-0 inset-y-0 w-1.5 opacity-[0.12]" aria-hidden="true"><video src="/media/portfolio-v2/decorations/film-loop.mp4" className="h-full w-full object-cover" muted loop playsInline preload="metadata" ref={(el) => { if (el) el.play().catch(() => {}) }} /></div>)}
+            {showVideo && (<div className="absolute left-0 inset-y-0 w-1.5 opacity-[0.12]" aria-hidden="true"><video src={publicAsset("/media/portfolio-v2/decorations/film-loop.mp4")} className="h-full w-full object-cover" muted loop playsInline preload="metadata" ref={(el) => { if (el) el.play().catch(() => {}) }} /></div>)}
             <div className="flex-shrink-0 pl-2"><p className="text-[10px] font-medium tracking-[0.15em] uppercase" style={{ color: 'rgba(200,192,184,0.2)' }}>01 / Selected Works</p><p className="text-[11px] font-semibold tracking-[0.08em] mt-0.5" style={{ color: 'rgba(200,192,184,0.5)' }}>EXPLORE</p></div>
             {filmDrawerOpen && (
               <motion.div className="flex gap-2 ml-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35, delay: 0.1 }}>
