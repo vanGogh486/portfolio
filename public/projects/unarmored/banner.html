@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《卸甲》Unarmored · 展板 · 80cm×180cm</title>
+<style>
+  /* ============================================================
+     《卸甲》Unarmored · 易拉宝展板
+     规格：80cm × 180cm | 冷灰雪夜 · 古风 · 克制 · 电影感
+     打印：Chrome > 另存为PDF > 自定义 800mm×1800mm
+     ============================================================ */
+
+  :root {
+    --bg-deep:      #0a0b0e;
+    --bg-panel:     #0d0f14;
+    --text-primary: #d0cbc4;
+    --text-secondary: #8a8580;
+    --text-muted:   #5c5854;
+    --line:         rgba(200, 192, 184, 0.15);
+    --line-strong:  rgba(200, 192, 184, 0.25);
+    --accent-warm:  #c8c0b4;
+    --accent-red:   #5c2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1c20;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  /* ---- Screen wrapper: scale banner to fit viewport ---- */
+  .banner-screen-wrap {
+    transform-origin: top center;
+    flex-shrink: 0;
+  }
+
+  /* ---- Banner container: 80cm × 180cm ---- */
+  .banner {
+    width: 80cm;
+    height: 180cm;
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    transform-origin: top left;
+    /* Print setup */
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* ============================================================
+     GLOBAL SNOW PARTICLE LAYER
+     Static scattered white dots simulating snow in night air
+     ============================================================ */
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      /* Layer 1: tiny distant particles */
+      radial-gradient(0.6px 0.6px at 5% 3%, rgba(255,255,255,0.08) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 12% 7%, rgba(255,255,255,0.06) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 22% 4%, rgba(255,255,255,0.07) 50%, transparent 50%),
+      radial-gradient(0.3px 0.3px at 31% 11%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 44% 5%, rgba(255,255,255,0.06) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 53% 8%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 67% 3%, rgba(255,255,255,0.07) 50%, transparent 50%),
+      radial-gradient(0.3px 0.3px at 76% 9%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 85% 6%, rgba(255,255,255,0.06) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 93% 2%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      /* Layer 2: mid-field */
+      radial-gradient(0.7px 0.7px at 8% 15%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 18% 22%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.8px 0.8px at 27% 18%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 39% 24%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 48% 16%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 58% 20%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.7px 0.7px at 64% 13%, rgba(255,255,255,0.06) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 72% 25%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 82% 19%, rgba(255,255,255,0.05) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 90% 14%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      /* Layer 3: scattered through narrative zone */
+      radial-gradient(0.5px 0.5px at 15% 42%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 33% 48%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 55% 44%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.7px 0.7px at 70% 50%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 88% 46%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      /* Layer 4: lower field */
+      radial-gradient(0.4px 0.4px at 10% 62%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 25% 68%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 42% 64%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 60% 70%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 78% 66%, rgba(255,255,255,0.04) 50%, transparent 50%),
+      radial-gradient(0.5px 0.5px at 92% 62%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      /* Layer 5: near bottom */
+      radial-gradient(0.5px 0.5px at 18% 82%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 38% 86%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.6px 0.6px at 62% 84%, rgba(255,255,255,0.03) 50%, transparent 50%),
+      radial-gradient(0.4px 0.4px at 80% 88%, rgba(255,255,255,0.03) 50%, transparent 50%);
+  }
+
+  /* ============================================================
+     ZONE 0 · Top margin · 8cm dark
+     ============================================================ */
+  .zone-top {
+    height: 8cm;
+    background: var(--bg-deep);
+  }
+
+  /* ============================================================
+     ZONE 1 · Title · 20cm
+     ============================================================ */
+  .zone-title {
+    height: 20cm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .zone-title .title-cn {
+    font-family: "STKaiti", "KaiTi", "Noto Serif SC", "SimSun", serif;
+    font-size: 180pt;
+    font-weight: bold;
+    color: var(--text-primary);
+    letter-spacing: 0.3em;
+    line-height: 1;
+    text-shadow:
+      0 0 3cm rgba(200, 192, 184, 0.08),
+      0 0 1cm rgba(200, 192, 184, 0.04);
+    /* ink bleed effect */
+    filter: url(#ink-bleed);
+  }
+
+  .zone-title .divider {
+    width: 18cm;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--line-strong) 20%,
+      var(--line-strong) 80%,
+      transparent 100%
+    );
+    margin: 1.2cm 0 0.8cm;
+  }
+
+  .zone-title .title-en {
+    font-family: "Georgia", "Noto Serif SC", "Times New Roman", serif;
+    font-size: 36pt;
+    color: var(--text-secondary);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 0.6cm;
+  }
+
+  .zone-title .tagline {
+    font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+    font-size: 18pt;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+  }
+
+  /* ============================================================
+     ZONE 2 · Three-column visual comparison · 66cm
+     ============================================================ */
+  .zone-visual {
+    height: 66cm;
+    padding: 0 5cm;
+    display: flex;
+    gap: 1.5cm;
+    position: relative;
+    z-index: 2;
+  }
+
+  .zone-visual .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+  }
+
+  /* Column label */
+  .col-label {
+    font-family: "Noto Serif SC", "STKaiti", "KaiTi", serif;
+    font-size: 22pt;
+    color: var(--accent-warm);
+    letter-spacing: 0.25em;
+    text-align: center;
+    padding: 1cm 0 0.6cm;
+    position: relative;
+  }
+  .col-label::after {
+    content: '';
+    display: block;
+    width: 4cm;
+    height: 1px;
+    background: var(--line-strong);
+    margin: 0.5cm auto 0;
+  }
+
+  /* LEFT: Character Design — vertical crop portrait */
+  .col-left .img-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 0.4cm 0.8cm;
+  }
+  .col-left .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 25%;
+    /* crop to upper body portrait for vertical format */
+  }
+
+  /* CENTER: Storyboard */
+  .col-center .img-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 0.4cm 0.8cm;
+  }
+  .col-center .img-wrap img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  /* RIGHT: Final frames — 3 stacked vertically */
+  .col-right .frames-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5cm;
+    padding: 0 0.4cm 0.8cm;
+  }
+  .col-right .frames-stack .frame {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .col-right .frames-stack .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  /* vignette on all zone-2 images */
+  .col .img-wrap,
+  .col .frame {
+    box-shadow: inset 0 0 2cm rgba(10, 11, 14, 0.55);
+  }
+
+  /* column dividers */
+  .col:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.75cm;
+    top: 3cm;
+    bottom: 3cm;
+    width: 1px;
+    background: var(--line);
+  }
+
+  /* ============================================================
+     ZONE 3 · Narrative + Scene images · 40cm
+     ============================================================ */
+  .zone-narrative {
+    height: 40cm;
+    padding: 0 5cm;
+    display: flex;
+    gap: 2cm;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Left: Project description text */
+  .narrative-text {
+    flex: 0 0 22cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2cm 0;
+  }
+
+  .narrative-text .section-label {
+    font-family: "Noto Serif SC", "STKaiti", serif;
+    font-size: 22pt;
+    color: var(--accent-warm);
+    letter-spacing: 0.2em;
+    margin-bottom: 1.2cm;
+  }
+  .narrative-text .section-label::after {
+    content: '';
+    display: block;
+    width: 4cm;
+    height: 1px;
+    background: var(--line-strong);
+    margin-top: 0.4cm;
+  }
+
+  .narrative-text p {
+    font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+    font-size: 15pt;
+    line-height: 2;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    text-align: justify;
+  }
+  .narrative-text p + p {
+    margin-top: 0.8cm;
+  }
+  .narrative-text .highlight {
+    color: var(--text-primary);
+  }
+
+  /* Right: Scene images — 2 stacked */
+  .narrative-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1cm;
+  }
+  .narrative-images .scene {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-panel);
+    box-shadow: inset 0 0 2cm rgba(10, 11, 14, 0.55);
+  }
+  .narrative-images .scene img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ============================================================
+     ZONE 4 · Tech & Info footer · 22cm
+     ============================================================ */
+  .zone-tech {
+    height: 22cm;
+    padding: 0 5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--line);
+    margin: 0 5cm;
+    width: auto;
+    /* only border on inner content */
+  }
+
+  .zone-tech .tech-label {
+    font-family: "Noto Serif SC", serif;
+    font-size: 16pt;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.8cm;
+  }
+
+  .zone-tech .toolchain {
+    display: flex;
+    align-items: center;
+    gap: 0.8cm;
+    margin-bottom: 1.2cm;
+  }
+  .zone-tech .toolchain .tool {
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 15pt;
+    color: var(--text-secondary);
+    letter-spacing: 0.06em;
+    padding: 0.3cm 0.8cm;
+    border: 1px solid var(--line);
+    background: var(--bg-panel);
+  }
+  .zone-tech .toolchain .arrow {
+    font-size: 14pt;
+    color: var(--text-muted);
+    letter-spacing: 0;
+  }
+
+  .zone-tech .divider-thin {
+    width: 10cm;
+    height: 1px;
+    background: var(--line);
+    margin: 0.8cm 0;
+  }
+
+  .zone-tech .credits {
+    text-align: center;
+  }
+  .zone-tech .credits p {
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 14pt;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    line-height: 2;
+  }
+  .zone-tech .credits .course {
+    color: var(--text-secondary);
+    font-size: 15pt;
+  }
+  .zone-tech .credits .author {
+    color: var(--text-primary);
+    font-size: 16pt;
+    margin-top: 0.4cm;
+  }
+
+  /* ============================================================
+     ZONE 5 · Bottom margin · 8cm dark
+     ============================================================ */
+  .zone-bottom {
+    height: 8cm;
+    background: var(--bg-deep);
+  }
+
+  /* ============================================================
+     SVG Filter for ink bleed effect (hidden)
+     ============================================================ */
+  .svg-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  /* ============================================================
+     PRINT STYLES
+     ============================================================ */
+  @media print {
+    @page {
+      size: 80cm 180cm;
+      margin: 0;
+    }
+    body {
+      background: white;
+      padding: 0;
+      margin: 0;
+      min-height: auto;
+      overflow: visible;
+    }
+    .banner-screen-wrap {
+      transform: none !important;
+    }
+    .banner {
+      width: 80cm;
+      height: 180cm;
+    }
+    .scale-notice {
+      display: none;
+    }
+  }
+
+  /* ============================================================
+     SCREEN SCALE HINT
+     ============================================================ */
+  .scale-notice {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(10, 11, 14, 0.9);
+    color: var(--text-muted);
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--line);
+    z-index: 100;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- Invisible SVG definitions for filters -->
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+  <filter id="ink-bleed" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+<!-- Screen-scale wrapper -->
+<div class="banner-screen-wrap" id="bannerScreenWrap">
+<!-- Main banner -->
+<div class="banner">
+
+  <!-- ZONE 0: Top margin -->
+  <div class="zone-top"></div>
+
+  <!-- ZONE 1: Title -->
+  <section class="zone-title">
+    <h1 class="title-cn">卸甲</h1>
+    <div class="divider"></div>
+    <p class="title-en">U N A R M O R E D</p>
+    <p class="tagline">AIGC 叙事动画短片 · 2′34″</p>
+  </section>
+
+  <!-- ZONE 2: Three-column visual comparison -->
+  <section class="zone-visual">
+    <!-- LEFT: Character Design -->
+    <div class="col col-left">
+      <div class="col-label">角色设定</div>
+      <div class="img-wrap">
+        <img src="process/character-style.png" alt="花木兰角色风格图" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- CENTER: Storyboard -->
+    <div class="col col-center">
+      <div class="col-label">分镜设计</div>
+      <div class="img-wrap">
+        <img src="process/storyboard-01.png" alt="第二幕分镜设计" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- RIGHT: Final frames -->
+    <div class="col col-right">
+      <div class="col-label">成片画面</div>
+      <div class="frames-stack">
+        <div class="frame">
+          <img src="gallery/5s.jpg" alt="风雪归人" loading="lazy" />
+        </div>
+        <div class="frame">
+          <img src="gallery/45s.jpg" alt="旧屋织机" loading="lazy" />
+        </div>
+        <div class="frame">
+          <img src="gallery/125s.jpg" alt="夜半惊醒" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE 3: Narrative + Scene images -->
+  <section class="zone-narrative">
+    <!-- Left: Text -->
+    <div class="narrative-text">
+      <div class="section-label">作品阐释</div>
+      <p>
+        战争结束后，<span class="highlight">木兰回到故乡</span>。身体已经回家，记忆仍停留在战场。
+      </p>
+      <p>
+        本片以<span class="highlight">冷灰水墨与木刻质感</span>的统一视觉语言，通过返乡、旧衣、织机、墓地等意象，讨论"如何带着伤口重新生活"。全片极少台词，以人物情绪与生活细节代替宏大战争场面，在克制中完成叙事。
+      </p>
+      <p>
+        作品为<span class="highlight">《影视短片制作》</span>课程成果，使用 AIGC 工具完成从角色设定、分镜设计到画面生成与剪辑包装的全流程创作。
+      </p>
+    </div>
+
+    <!-- Right: Scene images -->
+    <div class="narrative-images">
+      <div class="scene">
+        <img src="gallery/25s.jpg" alt="隔雪对望" loading="lazy" />
+      </div>
+      <div class="scene">
+        <img src="gallery/145s.jpg" alt="布落坟前" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE 4: Tech & Info -->
+  <section class="zone-tech">
+    <p class="tech-label">创作工具链</p>
+    <div class="toolchain">
+      <span class="tool">ChatGPT DALL·E</span>
+      <span class="arrow">→</span>
+      <span class="tool">即梦 AI</span>
+      <span class="arrow">→</span>
+      <span class="tool">Adobe Premiere Pro</span>
+    </div>
+    <div class="divider-thin"></div>
+    <div class="credits">
+      <p class="course">《影视短片制作》课程作品</p>
+      <p>创意策划 · 视觉风格 · 分镜设计 · AIGC 生成 · 剪辑包装</p>
+      <p class="author">潘奕冰 · 2026</p>
+    </div>
+  </section>
+
+  <!-- ZONE 5: Bottom margin -->
+  <div class="zone-bottom"></div>
+
+</div>
+
+</div><!-- end .banner-screen-wrap -->
+
+<div class="scale-notice" id="scaleNotice">展板规格 80cm × 180cm · 打印：Chrome → 另存为PDF → 自定义纸张 800×1800mm</div>
+
+<script>
+  // Auto-scale banner to fit viewport width for screen preview
+  (function() {
+    const BANNER_CM = 80; // banner width in cm
+    const MARGIN_PX = 32; // body padding
+
+    function rescale() {
+      const wrap = document.getElementById('bannerScreenWrap');
+      const notice = document.getElementById('scaleNotice');
+      if (!wrap) return;
+
+      const availW = window.innerWidth - MARGIN_PX;
+      // 1cm ≈ 37.795px at 96dpi. But we want the banner to fit the viewport.
+      const fullW = BANNER_CM * 37.795; // actual pixel width at 96dpi
+      const scale = Math.min(1, availW / fullW);
+
+      wrap.style.transform = `scale(${scale})`;
+      // Adjust body min-height so the scaled banner fits
+      const fullH = 180 * 37.795 * scale;
+      document.body.style.minHeight = (fullH + 48) + 'px';
+
+      if (notice) {
+        const pct = Math.round(scale * 100);
+        notice.textContent = `展板规格 80cm × 180cm · 屏幕缩放 ${pct}% · 打印：Chrome → 另存为PDF → 自定义纸张 800×1800mm`;
+      }
+    }
+
+    rescale();
+    window.addEventListener('resize', rescale);
+  })();
+</script>
+
+</body>
+</html>

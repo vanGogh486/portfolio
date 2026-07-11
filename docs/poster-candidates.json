@@ -1,0 +1,94 @@
+{
+  "unarmored": {
+    "title": "unarmored",
+    "dir": "unarmored",
+    "duration": 7,
+    "a": {
+      "timestamp": 4.2,
+      "brightness": 97,
+      "filename": "frame_4.2s.png",
+      "desc": "主体最清晰"
+    },
+    "b": {
+      "timestamp": 2.5,
+      "brightness": 55,
+      "filename": "frame_2.5s.png",
+      "desc": "视觉冲击力最强"
+    },
+    "c": {
+      "timestamp": 0.8,
+      "brightness": 53,
+      "filename": "frame_0.8s.png",
+      "desc": "适合横版卡片"
+    }
+  },
+  "vivo-relic": {
+    "title": "vivo-relic",
+    "dir": "vivo",
+    "duration": 4,
+    "a": {
+      "timestamp": 3,
+      "brightness": 199,
+      "filename": "frame_3.0s.png",
+      "desc": "主体最清晰"
+    },
+    "b": {
+      "timestamp": 2,
+      "brightness": 103,
+      "filename": "frame_2.0s.png",
+      "desc": "视觉冲击力最强"
+    },
+    "c": {
+      "timestamp": 1,
+      "brightness": 63,
+      "filename": "frame_1.0s.png",
+      "desc": "适合横版卡片"
+    }
+  },
+  "sk2-concept": {
+    "title": "sk2-concept",
+    "dir": "sk2",
+    "duration": 8,
+    "a": {
+      "timestamp": 7,
+      "brightness": 165,
+      "filename": "frame_7.0s.png",
+      "desc": "主体最清晰"
+    },
+    "b": {
+      "timestamp": 3,
+      "brightness": 110,
+      "filename": "frame_3.0s.png",
+      "desc": "视觉冲击力最强"
+    },
+    "c": {
+      "timestamp": 0.8,
+      "brightness": 89,
+      "filename": "frame_0.8s.png",
+      "desc": "适合横版卡片"
+    }
+  },
+  "midnight-elevator": {
+    "title": "midnight-elevator",
+    "dir": "midnight-elevator",
+    "duration": 9,
+    "a": {
+      "timestamp": 2.5,
+      "brightness": 25,
+      "filename": "frame_2.5s.png",
+      "desc": "主体最清晰"
+    },
+    "b": {
+      "timestamp": 4,
+      "brightness": 17,
+      "filename": "frame_4.0s.png",
+      "desc": "视觉冲击力最强"
+    },
+    "c": {
+      "timestamp": 5.5,
+      "brightness": 16,
+      "filename": "frame_5.5s.png",
+      "desc": "适合横版卡片"
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "images": [
+    {
+      "file": "A.png",
+      "width": 1672,
+      "height": 941,
+      "size": 1907134,
+      "alpha": false
+    },
+    {
+      "file": "B.png",
+      "width": 1122,
+      "height": 1402,
+      "size": 1356301,
+      "alpha": false
+    },
+    {
+      "file": "C.png",
+      "width": 1672,
+      "height": 941,
+      "size": 1633764,
+      "alpha": false
+    },
+    {
+      "file": "ChatGPT Image 2026年7月8日 22_28_48 (1).png",
+      "width": 1672,
+      "height": 941,
+      "size": 1528626,
+      "alpha": false
+    },
+    {
+      "file": "ChatGPT Image 2026年7月8日 22_28_48 (2).png",
+      "width": 941,
+      "height": 1672,
+      "size": 1748723,
+      "alpha": false
+    },
+    {
+      "file": "ChatGPT Image 2026年7月8日 22_55_21.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 2044698,
+      "alpha": false
+    },
+    {
+      "file": "ChatGPT Image 2026年7月8日 22_55_25.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 1911302,
+      "alpha": false
+    },
+    {
+      "file": "ChatGPT Image 2026年7月8日 22_55_28.png",
+      "width": 1536,
+      "height": 1024,
+      "size": 1724196,
+      "alpha": false
+    },
+    {
+      "file": "D.png",
+      "width": 1122,
+      "height": 1402,
+      "size": 1743301,
+      "alpha": false
+    },
+    {
+      "file": "E.png",
+      "width": 941,
+      "height": 1672,
+      "size": 1686650,
+      "alpha": false
+    },
+    {
+      "file": "F.png",
+      "width": 1586,
+      "height": 992,
+      "size": 2121700,
+      "alpha": false
+    },
+    {
+      "file": "G.png",
+      "width": 1586,
+      "height": 992,
+      "size": 1879780,
+      "alpha": false
+    },
+    {
+      "file": "H.png",
+      "width": 1586,
+      "height": 992,
+      "size": 1498584,
+      "alpha": false
+    },
+    {
+      "file": "I.png",
+      "width": 1586,
+      "height": 992,
+      "size": 1781137,
+      "alpha": false
+    },
+    {
+      "file": "J.png",
+      "width": 1672,
+      "height": 941,
+      "size": 1469765,
+      "alpha": false
+    },
+    {
+      "file": "K.png",
+      "width": 1672,
+      "height": 941,
+      "size": 1875136,
+      "alpha": false
+    },
+    {
+      "file": "L.png",
+      "width": 1672,
+      "height": 941,
+      "size": 2139257,
+      "alpha": false
+    },
+    {
+      "file": "M.png",
+      "width": 1672,
+      "height": 941,
+      "size": 2026880,
+      "alpha": false
+    },
+    {
+      "file": "N.png",
+      "width": 1254,
+      "height": 1254,
+      "size": 1271296,
+      "alpha": false
+    },
+    {
+      "file": "O.png",
+      "width": 1254,
+      "height": 1254,
+      "size": 1381710,
+      "alpha": false
+    },
+    {
+      "file": "P.png",
+      "width": 1254,
+      "height": 1254,
+      "size": 1329404,
+      "alpha": false
+    },
+    {
+      "file": "Q.png",
+      "width": 1254,
+      "height": 1254,
+      "size": 1032204,
+      "alpha": false
+    }
+  ],
+  "videos": [
+    {
+      "file": "01｜首页Hero人物循环·桌面版.mp4",
+      "size": 8024907,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "02｜首页Hero人物循环·手机版.mp4",
+      "size": 11810397,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "03｜Hero无人物背景循环.mp4",
+      "size": 11447174,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "04｜《卸甲》项目Hover预览.mp4",
+      "size": 10034439,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "09｜作品册封面打开.mp4",
+      "size": 3238388,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "10｜内页翻页.mp4",
+      "size": 6463224,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "11｜作品册关闭.mp4",
+      "size": 4342062,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "12｜透明玻璃环循环.mp4",
+      "size": 8130545,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "13｜镜头光圈Loading动画.mp4",
+      "size": 2268619,
+      "width": 0,
+      "height": 0
+    },
+    {
+      "file": "14｜胶片漂浮装饰循环.mp4",
+      "size": 1922522,
+      "width": 0,
+      "height": 0
+    }
+  ]
+}
