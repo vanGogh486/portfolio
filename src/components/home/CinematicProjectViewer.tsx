@@ -151,7 +151,6 @@ export default function CinematicProjectViewer({ projects, activeIndex, open, on
                   </div>
                 )}
               </div>
-              </div>
             </div>
 
             {/* RIGHT/TOP: Big image or video */}
