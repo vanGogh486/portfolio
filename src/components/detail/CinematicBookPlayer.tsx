@@ -36,7 +36,7 @@ export default function CinematicBookPlayer({ open, onClose }: { open: boolean; 
     if (isReducedMotion) { setPhase('screening'); startScreening(); return }
     setPhase('opening')
     const v = openRef.current
-    v.src = '/media/portfolio-v2/book/open.mp4'; v.currentTime = 0; v.load()
+    v.src = publicAsset('/media/portfolio-v2/book/open.mp4'); v.currentTime = 0; v.load()
     const onCanPlay = () => { v.removeEventListener('canplay', onCanPlay); v.play().catch(() => { setPhase('screening'); startScreening() }) }
     v.addEventListener('canplay', onCanPlay)
     v.onended = () => { v.onended = null; setPhase('screening'); startScreening() }
@@ -48,12 +48,12 @@ export default function CinematicBookPlayer({ open, onClose }: { open: boolean; 
     // Play flip as subtle background
     if (!isReducedMotion) {
       const f = flipRef.current
-      f.src = '/media/portfolio-v2/book/flip.mp4'; f.currentTime = 0; f.load()
+      f.src = publicAsset('/media/portfolio-v2/book/flip.mp4'); f.currentTime = 0; f.load()
       f.oncanplay = () => { f.oncanplay = null; f.play().catch(() => {}) }
     }
     // Play full video
     const v = fullRef.current
-    v.src = '/projects/unarmored/full.mp4'; v.currentTime = 0; v.load()
+    v.src = publicAsset('/projects/unarmored/full.mp4'); v.currentTime = 0; v.load()
     const onCanPlay = () => { v.removeEventListener('canplay', onCanPlay); v.play().catch(() => {}) }
     v.addEventListener('canplay', onCanPlay)
     v.onended = () => { v.onended = null; startClosing() }
@@ -66,7 +66,7 @@ export default function CinematicBookPlayer({ open, onClose }: { open: boolean; 
     if (isReducedMotion) { setPhase('cover'); setShowCover(true); return }
     setPhase('auto-closing')
     const v = closeRef.current
-    v.src = '/media/portfolio-v2/book/close.mp4'; v.currentTime = 0; v.load()
+    v.src = publicAsset('/media/portfolio-v2/book/close.mp4'); v.currentTime = 0; v.load()
     v.oncanplay = () => { v.oncanplay = null; v.play().catch(() => {}) }
     v.onended = () => { v.onended = null; setPhase('cover'); setShowCover(true) }
     animTimeout.current = setTimeout(() => { setPhase('cover'); setShowCover(true) }, 5000)

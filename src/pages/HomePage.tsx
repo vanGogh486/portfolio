@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 import SEOHead from '@/components/shared/SEOHead'
 import AboutSectionV3 from '@/components/home/AboutSectionV3'
 import WorksSectionV1 from '@/components/home/WorksSectionV1'
@@ -114,7 +115,7 @@ export default function HomePage() {
             <div className="flex-shrink-0 pl-2"><p className="text-[10px] font-medium tracking-[0.15em] uppercase" style={{ color: 'rgba(200,192,184,0.2)' }}>01 / Selected Works</p><p className="text-[11px] font-semibold tracking-[0.08em] mt-0.5" style={{ color: 'rgba(200,192,184,0.5)' }}>EXPLORE</p></div>
             {filmDrawerOpen && (
               <motion.div className="flex gap-2 ml-3" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35, delay: 0.1 }}>
-                {projects.map((p) => (<div key={p.slug} className="flex-shrink-0 rounded-lg overflow-hidden border" style={{ width: 90, height: 56, borderColor: 'rgba(200,192,184,0.12)' }}><img src={p.cover} alt={p.title} className="w-full h-full object-cover" loading="lazy" /></div>))}
+                {projects.map((p) => (<div key={p.slug} className="flex-shrink-0 rounded-lg overflow-hidden border" style={{ width: 90, height: 56, borderColor: 'rgba(200,192,184,0.12)' }}><img src={publicAsset(p.cover)} alt={p.title} className="w-full h-full object-cover" loading="lazy" /></div>))}
               </motion.div>
             )}
           </motion.div>

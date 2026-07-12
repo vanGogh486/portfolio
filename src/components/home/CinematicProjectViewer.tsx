@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { publicAsset } from '@/lib/publicAsset'
 
 interface ProjectEntry {
   slug: string; num: string; title: string; titleEn: string

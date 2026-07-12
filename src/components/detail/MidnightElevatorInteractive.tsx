@@ -33,7 +33,7 @@ export default function MidnightElevatorInteractive({ open, onClose }: { open: b
   useEffect(() => {
     if (phase === 'intro') {
       const v = videoRef.current
-      v.src = '/projects/midnight-elevator/interactive/intro.mp4'
+      v.src = publicAsset('/projects/midnight-elevator/interactive/intro.mp4')
       v.currentTime = 0
       v.load()
       const onCanPlay = () => { v.removeEventListener('canplay', onCanPlay); v.play().catch(() => {}) }
@@ -59,7 +59,7 @@ export default function MidnightElevatorInteractive({ open, onClose }: { open: b
 
     const v = videoRef.current
     v.pause()
-    v.src = `/projects/midnight-elevator/interactive/branch-${branch}.mp4`
+    v.src = publicAsset(`/projects/midnight-elevator/interactive/branch-${branch}.mp4`)
     v.currentTime = 0
     v.load()
 
