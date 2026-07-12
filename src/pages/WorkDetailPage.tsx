@@ -125,6 +125,13 @@ export default function WorkDetailPage() {
     return <NotFound message="项目未找到" />
   }
 
+  // Unarmored: directly render CinematicBookPlayer
+  if (slug === 'unarmored') {
+    return (
+      <CinematicBookPlayer open={true} onClose={() => window.history.back()} />
+    )
+  }
+
   // Find prev/next projects
   const idx = allWorks.findIndex((w: { slug: string }) => w.slug === slug)
   const prev = idx > 0 ? allWorks[idx - 1] : null
@@ -153,6 +160,19 @@ export default function WorkDetailPage() {
           </div>
           {detail.disclaimer && (
             <p className="mt-3 text-[11px] italic" style={{ color: 'rgba(200,192,184,0.18)' }}>{detail.disclaimer}</p>
+          )}
+
+          {/* Midnight Elevator: interactive entry in hero */}
+          {slug === 'midnight-elevator' && (
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <button onClick={() => setInteractiveOpen(true)}
+                className="inline-flex items-center gap-3 rounded-full border px-7 py-3.5 text-[14px] font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                style={{ borderColor: 'rgba(184,147,110,0.35)', color: '#B8936E', backgroundColor: 'rgba(184,147,110,0.05)' }}>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                进入互动模式
+              </button>
+              <span className="text-[11px]" style={{ color: 'rgba(200,192,184,0.22)' }}>体验A/B分支叙事 · 做出你的选择</span>
+            </div>
           )}
         </section>
 
@@ -198,18 +218,6 @@ export default function WorkDetailPage() {
           </section>
         )}
 
-        {/* 05 INTERACTIVE MODE — midnight-elevator only */}
-        {slug === 'midnight-elevator' && (
-          <section className="mb-10">
-            <button onClick={() => setInteractiveOpen(true)}
-              className="inline-flex items-center gap-3 rounded-full border px-7 py-3.5 text-[14px] font-medium transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-              style={{ borderColor: 'rgba(184,147,110,0.35)', color: '#B8936E', backgroundColor: 'rgba(184,147,110,0.05)' }}>
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              进入互动模式
-            </button>
-            <p className="text-[11px] mt-3 ml-1" style={{ color: 'rgba(200,192,184,0.22)' }}>体验A/B分支叙事 · 做出你的选择</p>
-          </section>
-        )}
 
         {/* 05 FULL VIDEO */}
         {work.fullVideo && (
