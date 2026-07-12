@@ -65,6 +65,8 @@ export default function HomePage() {
       {/* ===== HERO ===== */}
       <section ref={sectionRef} className="relative min-h-screen flex items-end bg-[#0C0C0C]" onMouseMove={onMouseMove}>
         <div className="absolute inset-0 z-0" aria-hidden="true">
+          {/* Static poster fallback — always visible behind video for iOS/mobile */}
+          <img src={publicAsset("/portrait/hero-portrait.png")} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 lg:opacity-0" aria-hidden="true" />
           {showVideo && !bgVideoError ? (
             <video ref={bgVideoRef} src={publicAsset("/media/portfolio-v2/hero/hero-background.mp4")} className="w-full h-full object-cover opacity-[0.22]" muted loop playsInline preload="metadata" />
           ) : (<div className="absolute inset-0 bg-[#0C0C0C]" />)}
@@ -92,7 +94,7 @@ export default function HomePage() {
           <motion.div className="absolute lg:relative inset-0 lg:inset-auto flex items-end justify-center lg:justify-end z-[8] pointer-events-none lg:pointer-events-auto lg:w-[56%]"
             style={{ x: parallaxOn ? personPX : 0, y: parallaxOn ? personPY : 0, scale: personScale, translateY: personY, opacity: heroOpacity }}>
             <div className="absolute inset-0 flex items-end lg:items-center justify-center lg:justify-end pointer-events-none overflow-visible z-0" aria-hidden="true" style={{ x: parallaxOn ? bgPX : 0 }}>
-              <p className="font-black uppercase tracking-tight leading-[0.85] text-center lg:text-right" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)', color: 'rgba(200,192,184,0.06)' }}>PAN<br className="lg:hidden"/> YIBING</p>
+              <p className="hidden lg:block font-black uppercase tracking-tight leading-[0.85] text-center lg:text-right" style={{ fontSize: 'clamp(4rem, 14vw, 16rem)', color: 'rgba(200,192,184,0.06)' }}>PAN YIBING</p>
             </div>
             <div className="relative z-10 flex items-end justify-center h-full w-full lg:w-auto" style={{ pointerEvents: 'auto' }}>
               <img src={publicAsset("/portrait/hero-portrait.png")} alt="" className="w-auto max-w-none object-contain object-bottom select-none" style={{ height: isMobile ? 'clamp(55vh, 65vh, 75vh)' : 'clamp(70vh, 88vh, 92vh)', maskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)', WebkitMaskImage: 'linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 8%, rgba(0,0,0,1) 22%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.1) 96%, rgba(0,0,0,0) 100%)' }} draggable={false} />
@@ -106,7 +108,7 @@ export default function HomePage() {
           </motion.div>
         </div>
 
-        <motion.div className="absolute bottom-0 right-0 z-20 pr-6 sm:pr-10 pb-6 sm:pb-8" style={{ opacity: heroOpacity }}>
+        <motion.div className="hidden lg:block absolute bottom-0 right-0 z-20 pr-6 sm:pr-10 pb-6 sm:pb-8" style={{ opacity: heroOpacity }}>
           <motion.div className="flex items-center gap-3 px-5 py-3.5 rounded-2xl cursor-pointer overflow-hidden" style={{ backgroundColor: 'rgba(18,18,18,0.85)', borderColor: 'rgba(200,192,184,0.1)', borderWidth: 1, borderStyle: 'solid', backdropFilter: 'blur(8px)' }}
             onMouseEnter={() => setFilmDrawerOpen(true)} onMouseLeave={() => setFilmDrawerOpen(false)}
             animate={{ width: filmDrawerOpen ? 'min(560px, 66vw)' : 280 }} transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}>
