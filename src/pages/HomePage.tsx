@@ -8,7 +8,6 @@ import WorksSectionV1 from '@/components/home/WorksSectionV1'
 import ExperienceSectionSimple from '@/components/home/ExperienceSectionSimple'
 import ToolstackSection from '@/components/home/ToolstackSection'
 import { projects } from '@/data/projects'
-import { publicAsset } from '@/lib/publicAsset'
 
 export default function HomePage() {
   const sectionRef = useRef<HTMLDivElement>(null!)
