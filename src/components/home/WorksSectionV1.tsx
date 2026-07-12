@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import CinematicProjectViewer from './CinematicProjectViewer'
 import { publicAsset } from '@/lib/publicAsset'
@@ -135,12 +136,42 @@ export default function WorksSectionV1() {
               <div><p className="text-[9px] font-medium tracking-[0.12em] uppercase mb-1" style={{ color:'rgba(200,192,184,0.35)' }}>Category</p><p className="text-[12px]" style={{ color:'rgba(200,192,184,0.6)' }}>{active.category}</p></div>
               <div><p className="text-[9px] font-medium tracking-[0.12em] uppercase mb-1" style={{ color:'rgba(200,192,184,0.35)' }}>Role</p><p className="text-[12px] leading-relaxed" style={{ color:'rgba(200,192,184,0.55)' }}>{active.role}</p></div>
               <p className="text-[12px] leading-relaxed" style={{ color:'rgba(200,192,184,0.45)' }}>{active.summary}</p>
-              <div className="pt-2">
-                <button onClick={()=>setViewerOpen(true)} className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
-                  style={{ color:'#B8936E' }}>
-                  VIEW PROJECT
-                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
-                </button>
+              <div className="pt-2 space-y-2">
+                {active.slug === 'unarmored' ? (
+                  <>
+                    <p className="text-[9px] font-medium tracking-[0.12em] uppercase" style={{ color:'rgba(184,147,110,0.45)' }}>SIGNATURE EXPERIENCE</p>
+                    <Link to="/project/unarmored" className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
+                      style={{ color:'#B8936E' }}>
+                      ENTER BOOK EXPERIENCE
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
+                    </Link>
+                    <br/>
+                    <button onClick={()=>setViewerOpen(true)} className="text-[10px] tracking-[0.08em] transition-colors duration-300"
+                      style={{ color:'rgba(200,192,184,0.28)' }}>
+                      沉浸式书册放映 · 查看项目 →
+                    </button>
+                  </>
+                ) : active.slug === 'midnight-elevator' ? (
+                  <>
+                    <p className="text-[9px] font-medium tracking-[0.12em] uppercase" style={{ color:'rgba(184,147,110,0.45)' }}>INTERACTIVE NARRATIVE</p>
+                    <Link to="/project/midnight-elevator?mode=interactive" className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
+                      style={{ color:'#B8936E' }}>
+                      PLAY INTERACTIVE STORY
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </Link>
+                    <br/>
+                    <button onClick={()=>setViewerOpen(true)} className="text-[10px] tracking-[0.08em] transition-colors duration-300"
+                      style={{ color:'rgba(200,192,184,0.28)' }}>
+                      A/B分支互动剧情 · 查看项目 →
+                    </button>
+                  </>
+                ) : (
+                  <button onClick={()=>setViewerOpen(true)} className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.1em] uppercase transition-colors duration-300"
+                    style={{ color:'#B8936E' }}>
+                    VIEW PROJECT
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 18l6-6-6-6"/></svg>
+                  </button>
+                )}
               </div>
             </motion.div>
           </div>

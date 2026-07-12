@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useParams, useSearchParams, Link } from 'react-router-dom'
 import { useWorkBySlug } from '@/hooks/useWorkBySlug'
 import { allWorks } from '@/data/works'
 import SEOHead from '@/components/shared/SEOHead'
@@ -118,8 +118,16 @@ export default function WorkDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const work = useWorkBySlug(slug ?? '')
   const detail = slug ? projectDetails[slug] : undefined
+  const [searchParams] = useSearchParams()
   const [interactiveOpen, setInteractiveOpen] = useState(false)
   const [bookPlayerOpen, setBookPlayerOpen] = useState(false)
+
+  // Auto-open midnight elevator interactive from ?mode=interactive
+  useEffect(() => {
+    if (slug === 'midnight-elevator' && searchParams.get('mode') === 'interactive') {
+      setInteractiveOpen(true)
+    }
+  }, [slug, searchParams])
 
   if (!work || !detail) {
     return <NotFound message="项目未找到" />

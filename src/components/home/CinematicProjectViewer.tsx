@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { publicAsset } from '@/lib/publicAsset'
 
@@ -127,6 +128,29 @@ export default function CinematicProjectViewer({ projects, activeIndex, open, on
                     </button>
                   )}
                 </div>
+
+                {/* Signature experience buttons */}
+                {active.slug === 'unarmored' && (
+                  <div className="pt-1">
+                    <Link to="/project/unarmored" onClick={onClose}
+                      className="inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-[11px] font-medium transition-all duration-300 hover:scale-[1.02]"
+                      style={{ borderColor: 'rgba(184,147,110,0.3)', color: '#B8936E' }}>
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                      打开书册体验
+                    </Link>
+                  </div>
+                )}
+                {active.slug === 'midnight-elevator' && (
+                  <div className="pt-1">
+                    <Link to="/project/midnight-elevator?mode=interactive" onClick={onClose}
+                      className="inline-flex items-center gap-1.5 rounded-full border px-4 py-1.5 text-[11px] font-medium transition-all duration-300 hover:scale-[1.02]"
+                      style={{ borderColor: 'rgba(184,147,110,0.3)', color: '#B8936E' }}>
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                      进入互动模式
+                    </Link>
+                  </div>
+                )}
+              </div>
               </div>
             </div>
 
